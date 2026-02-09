@@ -2,25 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://i3s825dkhvbn" path="res://Assets/RandomSquare.png" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://c7wqqxugnhb5v" path="res://Scripts/Note.gd" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://i5j8xayi6kjd" path="res://icon.svg" id="4_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(514.2855, 514.28577)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(68, 68)
+
 [node name="Node2D" type="Node2D" unique_id=6010253]
 
-[node name="Node" type="Node" parent="." unique_id=1564261211]
+[node name="Controll" type="Node" parent="." unique_id=1564261211]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node" unique_id=1451280682]
-collision_layer = 3
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll" unique_id=1451280682]
 input_pickable = true
 script = ExtResource("2_0e48y")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/CharacterBody2D" unique_id=406070639]
+[node name="Sprite2D" type="Sprite2D" parent="Controll/CharacterBody2D" unique_id=406070639]
 position = Vector2(437, 263)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("1_wtcfe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CharacterBody2D" unique_id=1639708152]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controll/CharacterBody2D" unique_id=1639708152]
 position = Vector2(437, 263)
 scale = Vector2(0.14, 0.14)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Node" type="Node" parent="." unique_id=1962187538]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node" unique_id=1737748098]
+position = Vector2(348, -56)
+script = ExtResource("3_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/CharacterBody2D" unique_id=290706605]
+position = Vector2(82, 103)
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("4_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CharacterBody2D" unique_id=1426875445]
+position = Vector2(82, 103)
+shape = SubResource("RectangleShape2D_kdubu")

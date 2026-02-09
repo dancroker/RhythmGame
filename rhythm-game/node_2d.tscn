@@ -1,5 +1,26 @@
 [gd_scene format=3 uid="uid://bhxnx1k7c444o"]
 
+[ext_resource type="Texture2D" uid="uid://i3s825dkhvbn" path="res://Assets/RandomSquare.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_0e48y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(514.2855, 514.28577)
+
 [node name="Node2D" type="Node2D" unique_id=6010253]
 
 [node name="Node" type="Node" parent="." unique_id=1564261211]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node" unique_id=1451280682]
+collision_layer = 3
+input_pickable = true
+script = ExtResource("2_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/CharacterBody2D" unique_id=406070639]
+position = Vector2(437, 263)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CharacterBody2D" unique_id=1639708152]
+position = Vector2(437, 263)
+scale = Vector2(0.14, 0.14)
+shape = SubResource("RectangleShape2D_0e48y")

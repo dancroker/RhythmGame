@@ -16,9 +16,12 @@ var collision_point
 var collision_info
 var blue_time_delay : int = 0
 var red_time_delay : int = 0
+@export var path : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if path == 1:
+		note.set_x_pos(position.x)
 	pass
 	#mouse_entered.connect(_on_mouse_entered)
 	#mouse_exited.connect(_on_mouse_exited)
@@ -39,7 +42,6 @@ func _process(delta: float) -> void:
 	sprite_2d.modulate = Color(1,1,1)
 	if (blue_time_delay >  0):
 		sprite_2d.modulate = Color.AQUA
-		print("colour")
 		blue_time_delay -= 1
 	if (red_time_delay > 0):
 		sprite_2d.modulate = Color.CRIMSON

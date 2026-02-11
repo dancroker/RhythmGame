@@ -36,3 +36,6 @@ func hit(type_hit : int):
 				type = 1
 	else:
 		print("Wrong Hit!")
+
+func set_x_pos(pos : int):
+	position.x = pos

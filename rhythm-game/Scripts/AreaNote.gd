@@ -7,7 +7,7 @@ extends Area2D
 var pos_start
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func ready_() -> void:
 	pos_start = position.y
 	if type == 1:
 		sprite_2d_2.self_modulate = Color.AQUA
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func process_(delta: float) -> void:
 	if (path == 0):
 		position.y += speed * delta
 	if type == 1:

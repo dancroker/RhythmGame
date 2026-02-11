@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bhxnx1k7c444o"]
 
-[ext_resource type="Texture2D" uid="uid://i3s825dkhvbn" path="res://Assets/RandomSquare.png" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://btojfxiedlad8" path="res://Scripts/AreaNote.gd" id="3_0hol4"]
-[ext_resource type="Texture2D" uid="uid://i5j8xayi6kjd" path="res://icon.svg" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://c5qopuiawblug" path="res://Scripts/main.gd" id="1_smepj"]
+[ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_cbffv"]
+[ext_resource type="Texture2D" uid="uid://i3s825dkhvbn" path="res://Assets/RandomSquare.png" id="3_fbudy"]
+[ext_resource type="Script" uid="uid://btojfxiedlad8" path="res://Scripts/AreaNote.gd" id="4_0m7cd"]
+[ext_resource type="Texture2D" uid="uid://i5j8xayi6kjd" path="res://icon.svg" id="5_2ihbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(514.2855, 514.28577)
@@ -11,19 +12,20 @@ size = Vector2(514.2855, 514.28577)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(68, 68)
 
-[node name="Node2D" type="Node2D" unique_id=6010253]
+[node name="Gameplay" type="Node2D" unique_id=6010253]
+script = ExtResource("1_smepj")
 
 [node name="Controll" type="Node" parent="." unique_id=1564261211]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll" unique_id=1451280682]
 input_pickable = true
-script = ExtResource("2_0e48y")
+script = ExtResource("2_cbffv")
 max_delay = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll/CharacterBody2D" unique_id=406070639]
 position = Vector2(545, 225)
 scale = Vector2(0.14, 0.14)
-texture = ExtResource("1_wtcfe")
+texture = ExtResource("3_fbudy")
 
 [node name="Area2D" type="Area2D" parent="Controll/CharacterBody2D" unique_id=1629974195]
 position = Vector2(545, 225)
@@ -36,14 +38,14 @@ shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="Note" type="Area2D" parent="Note" unique_id=1561228821]
 position = Vector2(0, -95)
-script = ExtResource("3_0hol4")
+script = ExtResource("4_0m7cd")
 speed = 60.0
 type = 1
 
 [node name="Sprite2D2" type="Sprite2D" parent="Note/Note" unique_id=1749239991]
 position = Vector2(546, 60)
 scale = Vector2(0.53125, 0.53125)
-texture = ExtResource("4_q6r6c")
+texture = ExtResource("5_2ihbs")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Note/Note" unique_id=1632458159]
 position = Vector2(546, 60)

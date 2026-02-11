@@ -19,7 +19,7 @@ var red_time_delay : int = 0
 @export var path : int
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func ready_() -> void:
 	if path == 1:
 		note.set_x_pos(position.x)
 	pass
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func process_(delta: float) -> void:
 	collision_info = move_and_collide(velocity)
 	if collision_info:
 		collision_point = collision_info.get_position()
@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 
 
 	
-func _input(event: InputEvent) -> void:
+func input_(event: InputEvent) -> void:
 	if is_mouse_inside:
 		if event.is_action_pressed("Inner"):
 			print("1")

@@ -1,7 +1,9 @@
 extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var note: Area2D = $"../../Note/Note"
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_note_area: CollisionShape2D = $Area2D/CollisionNoteArea
+@onready var collision_note_hit: CollisionShape2D = $Area2D/CollisionNoteHit
+
 
 @export var max_delay : int
 
@@ -11,7 +13,8 @@ enum{
 	Single = 1,
 	Hold = 2,
 }
-var note_collide : int = None
+var note_collide : Area2D = null
+var area : int = 0
 var collision_point
 var collision_info
 var blue_time_delay : int = 0
@@ -19,16 +22,16 @@ var red_time_delay : int = 0
 @export var path : int
 
 # Called when the node enters the scene tree for the first time.
-func ready_() -> void:
-	if path == 1:
-		note.set_x_pos(position.x)
+func _ready() -> void:
+	#if path == 1:
+		#note.set_x_pos(position.x)
 	pass
 	#mouse_entered.connect(_on_mouse_entered)
 	#mouse_exited.connect(_on_mouse_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func process_(delta: float) -> void:
+func _process(delta: float) -> void:
 	collision_info = move_and_collide(velocity)
 	if collision_info:
 		collision_point = collision_info.get_position()
@@ -57,20 +60,20 @@ func input_(event: InputEvent) -> void:
 			if (blue_time_delay ==  0):
 				blue_time_delay = max_delay
 				
-			if note_collide != None:
-				note.hit(1)
+			if note_collide != null:
+				note_collide.hit(1)
 		elif event.is_action_pressed("Outer"):
 			print("2")
 			if (red_time_delay ==  0):
 				red_time_delay = max_delay
-			if note_collide != None:
-				note.hit(2)
+			if note_collide != null:
+				note_collide.hit(2)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Note":
 		print("Note is inside hit zone!")
-		note_collide = Single
+		note_collide = area
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -82,6 +85,5 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.name == "Note":
-		print("Note left hit zone!")
-		note_collide = None
+	if area == note_collide:
+		note_collide = null

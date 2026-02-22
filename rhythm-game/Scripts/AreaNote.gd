@@ -4,6 +4,7 @@ extends Area2D
 @export var speed : float
 @export var path : int
 @export var type : int
+@export var in_hit_area : int
 var pos_start
 
 # Called when the node enters the scene tree for the first time.
@@ -19,14 +20,14 @@ func ready_() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process_(delta: float) -> void:
 	if (path == 0):
-		position.y += speed * delta
+		position.y -= speed * delta
 	if type == 1:
 		sprite_2d_2.self_modulate = Color.AQUA
 	elif type == 2:
 		sprite_2d_2.self_modulate = Color.CRIMSON
 
 func hit(type_hit : int):
-	if (type_hit == type):
+	if (type_hit == type and in_hit_area):
 		print("Note Hit!")
 		if (path == 0):
 			position.y = pos_start
@@ -39,3 +40,12 @@ func hit(type_hit : int):
 
 func set_x_pos(pos : int):
 	position.x = pos
+
+
+func _on_area_2d_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	in_hit_area = true
+	
+
+
+func _on_area_2d_2_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	in_hit_area= false;

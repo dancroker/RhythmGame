@@ -353,6 +353,7 @@ texture = ExtResource("1_cjl8s")
 script = ExtResource("2_lx3aw")
 
 [node name="charport" type="Sprite2D" parent="." unique_id=371248463]
+visible = false
 position = Vector2(505.99997, 247)
 scale = Vector2(0.58806777, 0.58806777)
 texture = ExtResource("4_jctyy")

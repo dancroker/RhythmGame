@@ -49,3 +49,18 @@ func process_(delta: float) -> void:
 			note_6.launch(1)
 		16:
 			note_7.launch(2)
+		18:
+			note_3.launch(1)
+		19:
+			note_5.launch(2)
+			
+		22:
+			note.launch(1)
+			note_2.launch(2)
+			note_3.launch(1)
+			note_4.launch(2)
+			note_5.launch(1)
+			note_6.launch(2)
+			note_7.launch(1)
+			note_8.launch(2)
+			

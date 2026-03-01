@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://beeu5qm8csg5v" path="res://Assets/area.png" id="1_cjl8s"]
 [ext_resource type="Script" uid="uid://ux2ywgsydi1h" path="res://Scripts/track_select.gd" id="1_lx3aw"]
 [ext_resource type="Script" uid="uid://bk48ora7y57r5" path="res://Scripts/record.gd" id="2_lx3aw"]
+[ext_resource type="Texture2D" uid="uid://i5j8xayi6kjd" path="res://icon.svg" id="4_jctyy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkde8"]
 corner_radius_top_left = 16
@@ -350,6 +351,11 @@ position = Vector2(259, 436.00003)
 scale = Vector2(0.34125972, 0.34125972)
 texture = ExtResource("1_cjl8s")
 script = ExtResource("2_lx3aw")
+
+[node name="charport" type="Sprite2D" parent="." unique_id=371248463]
+position = Vector2(505.99997, 247)
+scale = Vector2(0.58806777, 0.58806777)
+texture = ExtResource("4_jctyy")
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer2/ButtonDiff" to="." method="_on_button_diff_pressed"]

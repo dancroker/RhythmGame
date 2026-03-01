@@ -15,6 +15,7 @@ extends Control
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var labelchar: Label = $Labelchar
 @onready var v_box_container_2: VBoxContainer = $VBoxContainer2
+@onready var charport: Sprite2D = $charport
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +24,7 @@ func _ready() -> void:
 	h_box_container.hide()
 	labelchar.hide()
 	v_box_container_2.hide()
+	charport.hide()
 	pass # Replace with function body.
 
 
@@ -56,6 +58,7 @@ func _on_button_2_pressed() -> void:
 
 func difficulty():
 	h_box_container.hide()
+	charport.show()
 	labelchar.text = "Select Difficulty:"
 	v_box_container_2.show()
 

@@ -1,13 +1,15 @@
 extends Node2D
 @onready var character_body_2d: CharacterBody2D = $Controll/CharacterBody2D
-@onready var note: Area2D = $Note/Note
+#@onready var note: Area2D = $Note/Note
 @onready var two_character_body_2d: CharacterBody2D = $Controll2/CharacterBody2D
-
+@onready var note: Area2D = $NoteSet/Note
+@onready var note_2: Area2D = $NoteSet/Note2
 var in_menu : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	note.ready_()
+	note_2.ready_()
 	character_body_2d._ready()
 	two_character_body_2d._ready()
 	
@@ -17,6 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	character_body_2d._process(delta)
 	note.process_(delta)
+	note_2.process_(delta)
 	two_character_body_2d._process(delta)
 	
 func _input(event: InputEvent) -> void:

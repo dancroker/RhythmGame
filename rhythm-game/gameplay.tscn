@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c5qopuiawblug" path="res://Scripts/main.gd" id="1_smepj"]
 [ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_cbffv"]
-[ext_resource type="Texture2D" uid="uid://bmxou51rl2cyc" path="res://Assets/original-845AD8AB-914B-4DDF-ADB6-2BF4AFABBD6A.png" id="3_smepj"]
+[ext_resource type="Texture2D" uid="uid://cyjkt3mak0pc7" path="res://Assets/hit area.png" id="3_fbudy"]
 [ext_resource type="Script" uid="uid://btojfxiedlad8" path="res://Scripts/AreaNote.gd" id="4_0m7cd"]
 [ext_resource type="Script" uid="uid://tg2v6emt20iq" path="res://area_2d_2.gd" id="4_cbffv"]
 [ext_resource type="Texture2D" uid="uid://dwpkyo3n8s60r" path="res://Assets/original-5813480B-784E-4C70-9A5A-1AE37A74D795 - Copy.png" id="6_cbffv"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cbffv"]
-points = PackedVector2Array(42.857178, 250, -35.714355, 250, -257.14282, -257.14282, 257.14282, -257.14282, 242.85718, -192.85718)
+points = PackedVector2Array(69.601074, 213.87445, -59.05542, 211.64655, -284.7315, -253.97586, 240.44006, -247.2923, 223.56702, -198.2794)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smepj"]
-size = Vector2(37.5681, 2.2058315)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_0m7cd"]
+points = PackedVector2Array(-17.993553, 1.5973237, -19.479256, 0.22818851, -13.206276, -0.608505, -5.1174316, -1.2170097, 7.2634506, -1.0648835, 16.177681, -0.15212679, 19.80941, 0.5324409, 18.653862, 2.2058284, 10.3999405, 0.9127562, 0.33015442, 0.30425167, -8.584084, 0.5324409)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(68, 27)
@@ -22,15 +22,18 @@ script = ExtResource("1_smepj")
 [node name="Controll" type="Node" parent="." unique_id=1564261211]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll" unique_id=1451280682]
-position = Vector2(-8, -88)
+position = Vector2(-16, -76)
+rotation = -0.026243506
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll/CharacterBody2D" unique_id=406070639]
-position = Vector2(545, 224.99998)
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
 [node name="Area2D" type="Area2D" parent="Controll/CharacterBody2D" unique_id=1629974195]
 position = Vector2(545, 225)
@@ -43,198 +46,261 @@ shape = SubResource("ConvexPolygonShape2D_cbffv")
 script = ExtResource("4_cbffv")
 
 [node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll/CharacterBody2D/Area2D2" unique_id=64152686]
-position = Vector2(548, 124)
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll2" type="Node" parent="." unique_id=1540047616]
+[node name="Controll2" type="Node" parent="." unique_id=184423271]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll2" unique_id=1931955909]
-position = Vector2(1201, 352.00003)
-rotation = 2.6221437
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll2" unique_id=1808417059]
+position = Vector2(382.00003, -288.99997)
+rotation = 0.7179832
+scale = Vector2(0.8642337, 0.97831917)
+skew = 0.040630817
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll2/CharacterBody2D" unique_id=1061750009]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll2/CharacterBody2D" unique_id=1306984050]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=310322586]
+[node name="Area2D" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=1049347200]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D" unique_id=1129014766]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D" unique_id=1614036927]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=1382725828]
+[node name="Area2D2" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=232402977]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D2" unique_id=1490590022]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D2" unique_id=1692078226]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll5" type="Node" parent="." unique_id=1138766444]
+[node name="Controll3" type="Node" parent="." unique_id=1039426913]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll5" unique_id=480337744]
-position = Vector2(915, 842)
-rotation = 3.5027146
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll3" unique_id=432041722]
+position = Vector2(846, -196.99998)
+rotation = 1.5322194
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll5/CharacterBody2D" unique_id=910444546]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll3/CharacterBody2D" unique_id=948308258]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=1259157229]
+[node name="Area2D" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=1528400626]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D" unique_id=2069593100]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D" unique_id=1142572623]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=851494537]
+[node name="Area2D2" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=1668336261]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D2" unique_id=1218036747]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D2" unique_id=684988387]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll6" type="Node" parent="." unique_id=1153551070]
+[node name="Controll4" type="Node" parent="." unique_id=1519412545]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll6" unique_id=1872244270]
-position = Vector2(-102.000015, 469.99997)
-rotation = 5.4059525
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll4" unique_id=117250015]
+position = Vector2(1081.9999, 183.99994)
+rotation = 2.2695198
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll6/CharacterBody2D" unique_id=2112404671]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll4/CharacterBody2D" unique_id=702626636]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1461157474]
+[node name="Area2D" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=2080154196]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D" unique_id=1919284721]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D" unique_id=1947971294]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1614918135]
+[node name="Area2D2" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=2122606185]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D2" unique_id=1792787101]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D2" unique_id=17190597]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll7" type="Node" parent="." unique_id=399362133]
+[node name="Controll5" type="Node" parent="." unique_id=1853906406]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll7" unique_id=29187567]
-position = Vector2(294, 912)
-rotation = 4.484302
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll5" unique_id=1278050538]
+position = Vector2(982, 655)
+rotation = 3.0731702
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll7/CharacterBody2D" unique_id=1610510472]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll5/CharacterBody2D" unique_id=2006508344]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=167803687]
+[node name="Area2D" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=1895599377]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D" unique_id=1002203245]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D" unique_id=1916638164]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=378598635]
+[node name="Area2D2" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=199904577]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D2" unique_id=304304630]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D2" unique_id=2030321187]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll3" type="Node" parent="." unique_id=1849665362]
+[node name="Controll6" type="Node" parent="." unique_id=1612174119]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll3" unique_id=1656277719]
-position = Vector2(474, -369)
-rotation = 0.86655426
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll6" unique_id=1494581459]
+position = Vector2(584, 907)
+rotation = 3.851249
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll3/CharacterBody2D" unique_id=24621246]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll6/CharacterBody2D" unique_id=1715519392]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=721222747]
+[node name="Area2D" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1345848677]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D" unique_id=1169535029]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D" unique_id=841968047]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=55027771]
+[node name="Area2D2" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1394762281]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D2" unique_id=1233136904]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D2" unique_id=508244510]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Controll4" type="Node" parent="." unique_id=516100525]
+[node name="Controll7" type="Node" parent="." unique_id=2141886860]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll4" unique_id=750406250]
-position = Vector2(1003.99994, -181)
-rotation = 1.7398434
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll7" unique_id=100187904]
+position = Vector2(109, 798.99994)
+rotation = 4.6614347
+scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Controll4/CharacterBody2D" unique_id=454013998]
-position = Vector2(545, 224.99998)
+[node name="Sprite2D" type="Sprite2D" parent="Controll7/CharacterBody2D" unique_id=1813587451]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
 scale = Vector2(0.89977366, 0.798765)
-texture = ExtResource("3_smepj")
+texture = ExtResource("3_fbudy")
 
-[node name="Area2D" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=1453256273]
+[node name="Area2D" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=237965356]
 position = Vector2(545, 225)
 scale = Vector2(0.47413078, 0.4488615)
 
-[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D" unique_id=527233445]
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D" unique_id=1666257549]
 shape = SubResource("ConvexPolygonShape2D_cbffv")
 
-[node name="Area2D2" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=180447594]
+[node name="Area2D2" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=3579267]
 script = ExtResource("4_cbffv")
 
-[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D2" unique_id=1897139631]
-position = Vector2(548, 124)
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D2" unique_id=2096375550]
+position = Vector2(536.00006, 124)
 scale = Vector2(6.0577264, 13.146985)
-shape = SubResource("RectangleShape2D_smepj")
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
-[node name="Note" type="Node" parent="." unique_id=776400606]
+[node name="Controll8" type="Node" parent="." unique_id=1448144118]
 
-[node name="Note" type="Area2D" parent="Note" unique_id=1561228821]
-position = Vector2(-13, 232)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll8" unique_id=1286828506]
+position = Vector2(-140.99998, 380)
+rotation = 5.475633
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll8/CharacterBody2D" unique_id=522246552]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll8/CharacterBody2D" unique_id=333844535]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll8/CharacterBody2D/Area2D" unique_id=1124945505]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll8/CharacterBody2D" unique_id=308174996]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll8/CharacterBody2D/Area2D2" unique_id=1921466608]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="NoteSet" type="Node" parent="." unique_id=776400606]
+
+[node name="Note" type="Area2D" parent="NoteSet" unique_id=1561228821]
+position = Vector2(-69, 180)
+scale = Vector2(0.97314215, 0.82329375)
 script = ExtResource("4_0m7cd")
 speed = 60.0
 type = 1
 
-[node name="Sprite2D2" type="Sprite2D" parent="Note/Note" unique_id=1749239991]
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note" unique_id=1749239991]
 position = Vector2(549.00006, 60.99994)
 scale = Vector2(0.3065359, 0.19924153)
 texture = ExtResource("6_cbffv")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Note/Note" unique_id=1632458159]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note" unique_id=1632458159]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note2" type="Area2D" parent="NoteSet" unique_id=108029471]
+position = Vector2(175, -159)
+rotation = 0.74820614
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 1
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note2" unique_id=1130341644]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note2" unique_id=225385827]
 position = Vector2(546, 61.5)
 shape = SubResource("RectangleShape2D_kdubu")
 
@@ -242,41 +308,47 @@ shape = SubResource("RectangleShape2D_kdubu")
 [connection signal="area_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_shape_entered" from="Controll/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
 [connection signal="area_entered" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll2/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll2/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
-[connection signal="area_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_exited"]
-[connection signal="mouse_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll5/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll5/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
-[connection signal="area_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_exited"]
-[connection signal="mouse_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll6/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll6/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
-[connection signal="area_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_exited"]
-[connection signal="mouse_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll7/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll7/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_shape_entered" from="Controll2/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll2/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
 [connection signal="area_entered" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll3/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll3/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_shape_entered" from="Controll3/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll3/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
 [connection signal="area_entered" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_mouse_exited"]
-[connection signal="area_shape_entered" from="Controll4/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_entered"]
-[connection signal="area_shape_exited" from="Controll4/CharacterBody2D/Area2D2" to="Note/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_shape_entered" from="Controll4/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll4/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll5/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll5/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll6/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll6/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll7/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll7/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll8/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll8/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]

@@ -5,6 +5,7 @@ extends Area2D
 @export var path : int
 @export var type : int
 @export var in_hit_area : int
+@export var scaleValue : float
 var pos_start
 
 # Called when the node enters the scene tree for the first time.
@@ -14,13 +15,21 @@ func ready_() -> void:
 		sprite_2d_2.self_modulate = Color.AQUA
 	elif type == 2:
 		sprite_2d_2.self_modulate = Color.CRIMSON
+	scaleValue = 0.1;
+	sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process_(delta: float) -> void:
+	scaleValue += 0.001
+	sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
 	if (path == 0):
 		position.y -= speed * delta
+	elif (path == 1):
+		position.y -= speed * delta
+		position.x += speed/1.2 * delta
+		scaleValue += 0.0003
 	if type == 1:
 		sprite_2d_2.self_modulate = Color.AQUA
 	elif type == 2:
@@ -29,6 +38,8 @@ func process_(delta: float) -> void:
 func hit(type_hit : int):
 	if (type_hit == type and in_hit_area):
 		print("Note Hit!")
+		scaleValue = 0.1;
+		sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
 		if (path == 0):
 			position.y = pos_start
 			if (type == 1):

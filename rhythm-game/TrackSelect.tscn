@@ -12,6 +12,12 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx3aw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jctyy"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="Control" type="Control" unique_id=626703200]
 layout_mode = 3
 anchors_preset = 15
@@ -110,6 +116,47 @@ offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lx3aw")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1529553888]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = 85.0
+offset_right = 87.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="ButtonDiff" type="Button" parent="VBoxContainer2" unique_id=955245383]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/icon_normal_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_colors/icon_focus_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_colors/icon_pressed_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_colors/icon_hover_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jctyy")
+text = "Easy"
+
+[node name="ButtonDiff2" type="Button" parent="VBoxContainer2" unique_id=1750482543]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jctyy")
+text = "Medium"
+
+[node name="ButtonDiff3" type="Button" parent="VBoxContainer2" unique_id=1065970836]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jctyy")
+text = "Hard"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1652118092]
 layout_mode = 0
@@ -305,6 +352,9 @@ texture = ExtResource("1_cjl8s")
 script = ExtResource("2_lx3aw")
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer2/ButtonDiff" to="." method="_on_button_diff_pressed"]
+[connection signal="pressed" from="VBoxContainer2/ButtonDiff2" to="." method="_on_button_diff_2_pressed"]
+[connection signal="pressed" from="VBoxContainer2/ButtonDiff3" to="." method="_on_button_diff_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonChar" to="." method="_on_button_char_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonChar2" to="." method="_on_button_char_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonChar3" to="." method="_on_button_char_3_pressed"]

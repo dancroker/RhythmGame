@@ -14,6 +14,7 @@ extends Control
 @onready var panel_2: Panel = $Panel2 #
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var labelchar: Label = $Labelchar
+@onready var v_box_container_2: VBoxContainer = $VBoxContainer2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ func _ready() -> void:
 	panel_2.hide()
 	h_box_container.hide()
 	labelchar.hide()
+	v_box_container_2.hide()
 	pass # Replace with function body.
 
 
@@ -54,7 +56,8 @@ func _on_button_2_pressed() -> void:
 
 func difficulty():
 	h_box_container.hide()
-	labelchar.text = "Select Difficulty"
+	labelchar.text = "Select Difficulty:"
+	v_box_container_2.show()
 
 func _on_button_char_pressed() -> void:
 	difficulty()
@@ -78,3 +81,15 @@ func _on_button_char_4_pressed() -> void:
 func _on_button_char_5_pressed() -> void:
 	difficulty()
 	pass # Replace with function body.
+
+
+func _on_button_diff_pressed() -> void:
+	get_tree().change_scene_to_file("res://gameplay.tscn")
+
+
+func _on_button_diff_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://gameplay.tscn")
+
+
+func _on_button_diff_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://gameplay.tscn")

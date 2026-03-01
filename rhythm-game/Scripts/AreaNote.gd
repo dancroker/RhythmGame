@@ -4,48 +4,96 @@ extends Area2D
 @export var speed : float
 @export var path : int
 @export var type : int
-@export var in_hit_area : int
+var in_hit_area : int
+var timer : int = 0
 @export var scaleValue : float
 var pos_start
+var pos_start_x
 
 # Called when the node enters the scene tree for the first time.
 func ready_() -> void:
 	pos_start = position.y
+	pos_start_x = position.x
 	if type == 1:
 		sprite_2d_2.self_modulate = Color.AQUA
 	elif type == 2:
 		sprite_2d_2.self_modulate = Color.CRIMSON
-	scaleValue = 0.1;
+	scaleValue = 0;
 	sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
+	sprite_2d_2.hide()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process_(delta: float) -> void:
-	scaleValue += 0.001
-	sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
-	if (path == 0):
-		position.y -= speed * delta
-	elif (path == 1):
-		position.y -= speed * delta
-		position.x += speed/1.2 * delta
-		scaleValue += 0.0003
-	if type == 1:
-		sprite_2d_2.self_modulate = Color.AQUA
-	elif type == 2:
-		sprite_2d_2.self_modulate = Color.CRIMSON
+	#print(timer)
+	if timer > 220:
+			timer = 0;
+			position.y = pos_start
+			position.x = pos_start_x
+			scaleValue = 0
+			sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
+			print("Out of time!")
+			hide_all()
+	if sprite_2d_2.visible == true:
+		scaleValue += 0.001
+		sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
+		timer += 1
+		#print(timer)
+		if (path == 0):
+			position.y -= (speed*1.5) * delta
+			scaleValue += 0.0006
+		elif (path == 1):
+			position.y -= speed * delta
+			position.x += speed/1.2 * delta
+			scaleValue += 0.0007
+		elif (path == 2):
+			#position.y -= speed * delta
+			position.x += (speed*1.5) * delta
+			scaleValue += 0.0007
+		elif (path == 3):
+			position.y += speed * delta
+			position.x += speed/1* delta
+			scaleValue += 0.0011
+		elif (path == 4):
+			position.y += (speed*1.5) * delta
+			scaleValue += 0.0006
+		elif (path == 5):
+			position.y += speed * delta
+			position.x -= speed/1.2 * delta
+			scaleValue += 0.0007
+		elif (path == 6):
+			position.x -= (speed*1.5) * delta
+			scaleValue += 0.0006
+		elif (path == 7):
+			position.y -= speed * delta
+			position.x -= speed/1* delta
+			scaleValue += 0.0013
+		if type == 1:
+			sprite_2d_2.self_modulate = Color.AQUA
+		elif type == 2:
+			sprite_2d_2.self_modulate = Color.CRIMSON
+	else:
+		timer = 0
 
 func hit(type_hit : int):
-	if (type_hit == type and in_hit_area):
+	if (type_hit == type):
 		print("Note Hit!")
-		scaleValue = 0.1;
+		scaleValue = 0;
 		sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
-		if (path == 0):
-			position.y = pos_start
-			if (type == 1):
-				type = 2
-			else:
-				type = 1
+		
+		if timer > 120:
+			print("Perfet!")
+		elif timer > 90:
+			print("Close!")
+		else:
+			print("Miss!")
+		
+		timer = 0;
+		
+		position.y = pos_start
+		position.x = pos_start_x
+		hide_all()
 	else:
 		print("Wrong Hit!")
 
@@ -60,3 +108,18 @@ func _on_area_2d_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_in
 
 func _on_area_2d_2_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	in_hit_area= false;
+	#timer = 0;
+
+func hide_all():
+	sprite_2d_2.hide()
+	
+func show_all():
+	print("Done")
+	sprite_2d_2.show()
+	
+func set_type(type_select):
+	type = type_select
+	
+func launch(type_select):
+	set_type(type_select)
+	show_all()

@@ -19,6 +19,7 @@ var collision_point
 var collision_info
 var blue_time_delay : int = 0
 var red_time_delay : int = 0
+#var timer : int = 0
 @export var path : int
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +41,10 @@ func _process(delta: float) -> void:
 		
 	if collision_point != 0:
 		print("Note")
+		
+	#if note_collide != null:
+	#	timer += 1
+	#print(timer)
 		
 
 	sprite_2d.modulate = Color(1,1,1)
@@ -71,9 +76,10 @@ func input_(event: InputEvent) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "Note":
+	if area.has_method("hit") and area.path == path:
 		print("Note is inside hit zone!")
 		note_collide = area
+		
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -83,7 +89,7 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	is_mouse_inside = false
 
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area == note_collide:
 		note_collide = null
+	#timer = 0

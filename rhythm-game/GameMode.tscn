@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c04d4bgjw5wvb"]
 
+[ext_resource type="Script" uid="uid://b60mp03sbol07" path="res://Scripts/game_mode.gd" id="1_mvkr4"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot8od"]
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -13,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mvkr4")
 
 [node name="Panel" type="Panel" parent="." unique_id=1369326062]
 layout_mode = 1
@@ -29,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -217.5
-offset_top = -152.0
-offset_right = 214.5
-offset_bottom = -83.0
+offset_left = -232.0
+offset_top = -324.0
+offset_right = 230.0
+offset_bottom = -255.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -70,3 +73,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ot8od")
 text = "Tourniment"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

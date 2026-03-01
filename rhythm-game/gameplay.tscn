@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cyjkt3mak0pc7" path="res://Assets/hit area.png" id="3_fbudy"]
 [ext_resource type="Script" uid="uid://btojfxiedlad8" path="res://Scripts/AreaNote.gd" id="4_0m7cd"]
 [ext_resource type="Script" uid="uid://tg2v6emt20iq" path="res://area_2d_2.gd" id="4_cbffv"]
+[ext_resource type="Script" uid="uid://rkbgrr5wvmis" path="res://Scripts/note_set.gd" id="5_fbudy"]
 [ext_resource type="Texture2D" uid="uid://dwpkyo3n8s60r" path="res://Assets/original-5813480B-784E-4C70-9A5A-1AE37A74D795 - Copy.png" id="6_cbffv"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cbffv"]
@@ -22,7 +23,7 @@ script = ExtResource("1_smepj")
 [node name="Controll" type="Node" parent="." unique_id=1564261211]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll" unique_id=1451280682]
-position = Vector2(-16, -76)
+position = Vector2(90.000015, -51.00003)
 rotation = -0.026243506
 scale = Vector2(0.8799997, 1)
 input_pickable = true
@@ -53,13 +54,14 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll2" type="Node" parent="." unique_id=184423271]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll2" unique_id=1808417059]
-position = Vector2(382.00003, -288.99997)
+position = Vector2(488.00006, -264)
 rotation = 0.7179832
 scale = Vector2(0.8642337, 0.97831917)
 skew = 0.040630817
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll2/CharacterBody2D" unique_id=1306984050]
 position = Vector2(549.00006, 393)
@@ -85,12 +87,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll3" type="Node" parent="." unique_id=1039426913]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll3" unique_id=432041722]
-position = Vector2(846, -196.99998)
+position = Vector2(952, -172.00002)
 rotation = 1.5322194
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll3/CharacterBody2D" unique_id=948308258]
 position = Vector2(549.00006, 393)
@@ -116,12 +119,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll4" type="Node" parent="." unique_id=1519412545]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll4" unique_id=117250015]
-position = Vector2(1081.9999, 183.99994)
+position = Vector2(1187.9999, 208.99991)
 rotation = 2.2695198
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll4/CharacterBody2D" unique_id=702626636]
 position = Vector2(549.00006, 393)
@@ -147,12 +151,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll5" type="Node" parent="." unique_id=1853906406]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll5" unique_id=1278050538]
-position = Vector2(982, 655)
+position = Vector2(1088, 680)
 rotation = 3.0731702
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll5/CharacterBody2D" unique_id=2006508344]
 position = Vector2(549.00006, 393)
@@ -178,12 +183,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll6" type="Node" parent="." unique_id=1612174119]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll6" unique_id=1494581459]
-position = Vector2(584, 907)
+position = Vector2(690, 932)
 rotation = 3.851249
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll6/CharacterBody2D" unique_id=1715519392]
 position = Vector2(549.00006, 393)
@@ -209,12 +215,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll7" type="Node" parent="." unique_id=2141886860]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll7" unique_id=100187904]
-position = Vector2(109, 798.99994)
+position = Vector2(215, 823.9999)
 rotation = 4.6614347
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll7/CharacterBody2D" unique_id=1813587451]
 position = Vector2(549.00006, 393)
@@ -240,12 +247,13 @@ shape = SubResource("ConvexPolygonShape2D_0m7cd")
 [node name="Controll8" type="Node" parent="." unique_id=1448144118]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Controll8" unique_id=1286828506]
-position = Vector2(-140.99998, 380)
+position = Vector2(-34, 404.99997)
 rotation = 5.475633
 scale = Vector2(0.8799997, 1)
 input_pickable = true
 script = ExtResource("2_cbffv")
 max_delay = 10
+path = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Controll8/CharacterBody2D" unique_id=522246552]
 position = Vector2(549.00006, 393)
@@ -269,9 +277,10 @@ scale = Vector2(6.0577264, 13.146985)
 shape = SubResource("ConvexPolygonShape2D_0m7cd")
 
 [node name="NoteSet" type="Node" parent="." unique_id=776400606]
+script = ExtResource("5_fbudy")
 
 [node name="Note" type="Area2D" parent="NoteSet" unique_id=1561228821]
-position = Vector2(-69, 180)
+position = Vector2(34, 205)
 scale = Vector2(0.97314215, 0.82329375)
 script = ExtResource("4_0m7cd")
 speed = 60.0
@@ -286,8 +295,26 @@ texture = ExtResource("6_cbffv")
 position = Vector2(546, 61.5)
 shape = SubResource("RectangleShape2D_kdubu")
 
+[node name="Note6" type="Area2D" parent="NoteSet" unique_id=52482295]
+position = Vector2(1133, 458.99994)
+rotation = 3.177308
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 4
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note6" unique_id=746304389]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note6" unique_id=2074575608]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
 [node name="Note2" type="Area2D" parent="NoteSet" unique_id=108029471]
-position = Vector2(175, -159)
+position = Vector2(278, -134)
 rotation = 0.74820614
 scale = Vector2(0.97314215, 0.82329375)
 script = ExtResource("4_0m7cd")
@@ -302,6 +329,100 @@ texture = ExtResource("6_cbffv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note2" unique_id=225385827]
 position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note7" type="Area2D" parent="NoteSet" unique_id=467892635]
+position = Vector2(911.00006, 746)
+rotation = 3.8271775
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 5
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note7" unique_id=2045518316]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note7" unique_id=2127595902]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note8" type="Area2D" parent="NoteSet" unique_id=1866225848]
+position = Vector2(462.00006, 867)
+rotation = 4.707663
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 6
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note8" unique_id=340238681]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note8" unique_id=399445637]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note4" type="Area2D" parent="NoteSet" unique_id=1023465275]
+position = Vector2(701, -227)
+rotation = 1.5919924
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 2
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note4" unique_id=739864001]
+position = Vector2(556.82904, 60.83995)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note4" unique_id=464268527]
+position = Vector2(553.829, 61.34001)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note3" type="Area2D" parent="NoteSet" unique_id=459784270]
+position = Vector2(278, -134)
+rotation = 0.74820614
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 7
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note3" unique_id=1675556746]
+position = Vector2(461.99628, 162.54271)
+rotation = -1.5935292
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note3" unique_id=1869195201]
+position = Vector2(458.99622, 163.04276)
+rotation = -1.5935292
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note5" type="Area2D" parent="NoteSet" unique_id=1171021058]
+position = Vector2(856, 774.99994)
+rotation = -2.368732
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 3
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note5" unique_id=1021534729]
+position = Vector2(465.653, 178.12172)
+rotation = -1.5935292
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note5" unique_id=214642990]
+position = Vector2(462.65295, 178.62177)
+rotation = -1.5935292
 shape = SubResource("RectangleShape2D_kdubu")
 
 [connection signal="area_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_entered"]

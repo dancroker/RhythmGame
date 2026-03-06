@@ -425,6 +425,33 @@ position = Vector2(462.65295, 178.62177)
 rotation = -1.5935292
 shape = SubResource("RectangleShape2D_kdubu")
 
+[node name="Label" type="Label" parent="NoteSet" unique_id=1859930328]
+offset_right = 188.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Perfect:"
+
+[node name="Label2" type="Label" parent="NoteSet" unique_id=317090746]
+offset_top = 63.0
+offset_right = 188.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 40
+text = "Close:"
+
+[node name="Label3" type="Label" parent="NoteSet" unique_id=53968131]
+offset_top = 127.0
+offset_right = 188.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 40
+text = "Bad:"
+
+[node name="Label4" type="Label" parent="NoteSet" unique_id=709643830]
+offset_left = 1040.0
+offset_right = 1228.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "A"
+
 [connection signal="area_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="mouse_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_mouse_entered"]

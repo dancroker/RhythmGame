@@ -106,6 +106,7 @@ theme_override_font_sizes/font_size = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rkde8")
 
 [node name="Panel2" type="Panel" parent="." unique_id=291834656]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +161,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jctyy")
 text = "Hard"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1652118092]
+visible = false
 layout_mode = 0
 offset_left = 213.0
 offset_top = 396.00003

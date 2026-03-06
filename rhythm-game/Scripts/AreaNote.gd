@@ -6,6 +6,7 @@ extends Area2D
 @export var type : int
 var in_hit_area : int
 var timer : int = 0
+var score : int = 0
 @export var scaleValue : float
 var pos_start
 var pos_start_x
@@ -34,6 +35,7 @@ func process_(delta: float) -> void:
 			scaleValue = 0
 			sprite_2d_2.scale = Vector2(scaleValue,scaleValue)
 			print("Out of time!")
+			score = 1
 			hide_all()
 	if sprite_2d_2.visible == true:
 		scaleValue += 0.001
@@ -84,10 +86,13 @@ func hit(type_hit : int):
 		
 		if timer > 120:
 			print("Perfet!")
+			score = 3
 		elif timer > 90:
 			print("Close!")
+			score = 2
 		else:
 			print("Miss!")
+			score = 1
 		
 		timer = 0;
 		
@@ -100,11 +105,9 @@ func hit(type_hit : int):
 func set_x_pos(pos : int):
 	position.x = pos
 
-
 func _on_area_2d_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	in_hit_area = true
 	
-
 
 func _on_area_2d_2_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	in_hit_area= false;
@@ -123,3 +126,9 @@ func set_type(type_select):
 func launch(type_select):
 	set_type(type_select)
 	show_all()
+	
+func getscore():
+	if score != 0:
+		var score_temp = score
+		score = 0
+		return score_temp

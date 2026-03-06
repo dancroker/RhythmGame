@@ -9,6 +9,15 @@ var internal_timer : float = 0
 @onready var note_6: Area2D = $Note6
 @onready var note_7: Area2D = $Note7
 @onready var note_8: Area2D = $Note8
+
+@onready var label: Label = $Label
+@onready var label_2: Label = $Label2
+@onready var label_3: Label = $Label3
+@onready var label_4: Label = $Label4
+
+var perfect = 0
+var close = 0
+var bad = 0
 # Called when the node enters the scene tree for the first time.
 func ready_() -> void:
 	note.ready_()
@@ -32,8 +41,21 @@ func process_(delta: float) -> void:
 	note_7.process_(delta)
 	note_8.process_(delta)
 	
+	score_track()
+	
+	label.text = "Perfect: " + str(perfect)
+	label_2.text = "Close: " + str(close)
+	label_3.text = "Bad: " + str(bad)
+	
+	if perfect > close+2 and perfect > bad+2:
+		label_4.text = "S"
+	elif close > bad:
+		label_4.text = "B"
+	else:
+		label_4.text = "C"
+	
 	internal_timer += delta
-	print(internal_timer)
+	#print(internal_timer)
 	match int(internal_timer):
 		3:
 			note.launch(2)
@@ -64,3 +86,30 @@ func process_(delta: float) -> void:
 			note_7.launch(1)
 			note_8.launch(2)
 			
+func score_track():
+	var score = note.getscore()
+	score_update(score)
+	score = note_2.getscore()
+	score_update(score)
+	score = note_3.getscore()
+	score_update(score)
+	score = note_4.getscore()
+	score_update(score)
+	score = note_5.getscore()
+	score_update(score)
+	score = note_6.getscore()
+	score_update(score)
+	score = note_7.getscore()
+	score_update(score)
+	score = note_8.getscore()
+	score_update(score)
+	
+
+
+func score_update(score):
+	if score == 3:
+		perfect+=1
+	elif score == 2:
+		close+=1
+	elif score == 1:
+		bad+=1

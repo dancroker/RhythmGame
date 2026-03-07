@@ -117,7 +117,7 @@ func hide_all():
 	sprite_2d_2.hide()
 	
 func show_all():
-	print("Done")
+	#print("Done")
 	sprite_2d_2.show()
 	
 func set_type(type_select):

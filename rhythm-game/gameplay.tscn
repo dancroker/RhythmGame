@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://tg2v6emt20iq" path="res://area_2d_2.gd" id="4_cbffv"]
 [ext_resource type="Script" uid="uid://rkbgrr5wvmis" path="res://Scripts/note_set.gd" id="5_fbudy"]
 [ext_resource type="Texture2D" uid="uid://dwpkyo3n8s60r" path="res://Assets/original-5813480B-784E-4C70-9A5A-1AE37A74D795 - Copy.png" id="6_cbffv"]
+[ext_resource type="Script" uid="uid://drtj1m71ciqok" path="res://Scripts/controler_control.gd" id="8_2ihbs"]
+[ext_resource type="Texture2D" uid="uid://beeu5qm8csg5v" path="res://Assets/area.png" id="9_1qy1k"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cbffv"]
 points = PackedVector2Array(69.601074, 213.87445, -59.05542, 211.64655, -284.7315, -253.97586, 240.44006, -247.2923, 223.56702, -198.2794)
@@ -16,6 +18,8 @@ points = PackedVector2Array(-17.993553, 1.5973237, -19.479256, 0.22818851, -13.2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(68, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3n40r"]
 
 [node name="Gameplay" type="Node2D" unique_id=6010253]
 script = ExtResource("1_smepj")
@@ -451,6 +455,21 @@ offset_right = 1228.0
 offset_bottom = 55.0
 theme_override_font_sizes/font_size = 40
 text = "A"
+
+[node name="Controler Control" type="Node" parent="." unique_id=1321562546]
+
+[node name="Area2D" type="Area2D" parent="Controler Control" unique_id=461524763]
+script = ExtResource("8_2ihbs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controler Control/Area2D" unique_id=1773493345]
+position = Vector2(575, 321)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("9_1qy1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controler Control/Area2D" unique_id=930951829]
+position = Vector2(576, 320.00003)
+scale = Vector2(2.200341, 2.2145085)
+shape = SubResource("CircleShape2D_3n40r")
 
 [connection signal="area_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_exited"]

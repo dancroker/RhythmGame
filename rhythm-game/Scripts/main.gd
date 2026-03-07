@@ -9,6 +9,7 @@ extends Node2D
 @onready var svn_character_body_2d: CharacterBody2D = $Controll7/CharacterBody2D
 @onready var eght_character_body_2d: CharacterBody2D = $Controll8/CharacterBody2D
 @onready var note_set: Node = $NoteSet
+@onready var controler_control: Node = $"Controler Control"
 
 var in_menu : bool = false
 
@@ -37,6 +38,8 @@ func _process(delta: float) -> void:
 	six_character_body_2d._process(delta)
 	svn_character_body_2d._process(delta)
 	eght_character_body_2d._process(delta)
+	
+
 	
 func _input(event: InputEvent) -> void:
 	character_body_2d.input_(event)

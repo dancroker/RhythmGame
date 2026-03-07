@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_note_area: CollisionShape2D = $Area2D/CollisionNoteArea
 @onready var collision_note_hit: CollisionShape2D = $Area2D/CollisionNoteHit
+@onready var controler_control: Node = $"../../Controler Control"
 
 
 @export var max_delay : int
@@ -54,8 +55,8 @@ func _process(delta: float) -> void:
 	if (red_time_delay > 0):
 		sprite_2d.modulate = Color.CRIMSON
 		red_time_delay -= 1
-
-
+		
+		
 	
 func input_(event: InputEvent) -> void:
 	if is_mouse_inside:
@@ -80,6 +81,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("Note is inside hit zone!")
 		note_collide = area
 		
+	if area.has_method("control"):
+		is_mouse_inside = true
+		
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -92,4 +96,7 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area == note_collide:
 		note_collide = null
+		
+	if area.has_method("control"):
+		is_mouse_inside = false
 	#timer = 0

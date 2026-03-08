@@ -57,32 +57,32 @@ func process_(delta: float) -> void:
 	else:
 		label_4.text = "C"
 	
-	internal_timer += 0.01
+	internal_timer += delta
 	#print (internal_timer)
 	#print(internal_timer)
 	print(round_to_dp(internal_timer,1))
-	match int(round_to_dp(internal_timer,1)):
-		2:
+	match (round_to_dp(internal_timer,1)):
+		2.0:
 			note.launch(2)
-		3: 
+		3.0: 
 			note_2.launch(1)
-		4:
+		4.0:
 			note_4.launch(2)
-		6:
+		6.0:
 			note_5.launch(1)
-		7:
+		7.0:
 			note_7.launch(2)
-		9:
+		9.0:
 			note_8.launch(1)
-		10:
+		10.0:
 			note_7.launch(2)
 		10.4:
 			note.launch(1)
-		11:
+		11.0:
 			note_6.launch(1)
-		12:
+		12.0:
 			note_3.launch(1)
-		13:
+		13.0:
 			note_4.launch(1)
 		13.1:
 			note_5.launch(2)
@@ -92,19 +92,19 @@ func process_(delta: float) -> void:
 			note_7.launch(1)
 		13.8:
 			note_8.launch(1)
-		14:
+		14.0:
 			note.launch(2)
-		15:
+		15.0:
 			note_3.launch(1)
-		16:
+		16.0:
 			note_5.launch(2)
-		17:
+		17.0:
 			note_4.launch(1)
 		17.3:
 			note_7.launch(2)
 		17.6:
 			note_4.launch(1)
-		18:
+		18.0:
 			note_8.launch(2)
 		18.3:
 			note_6.launch(2)	
@@ -122,17 +122,17 @@ func process_(delta: float) -> void:
 			note_7.launch(1)
 		19.8:
 			note_3.launch(1)
-		20:
+		20.0:
 			note.launch(1)
-		21:
+		21.0:
 			note_5.launch(2)
 		21.5:
 			note.launch(1)
-		22:
+		22.0:
 			note_4.launch(2)
 		22.5:
 			note_8.launch(2)
-		23:
+		23.0:
 			note_4.launch(1)
 		23.4:
 			note_3.launch(1)
@@ -140,11 +140,11 @@ func process_(delta: float) -> void:
 			note_6.launch(2)
 		24.2:
 			note_2.launch(2)
-		25:
+		25.0:
 			note_7.launch(1)
-		26:
+		26.0:
 			note.launch(1)
-		27:
+		27.0:
 			note_5.launch(2)
 			print("1")
 		27.4:
@@ -185,7 +185,7 @@ func process_(delta: float) -> void:
 			print("1")
 		31.8:
 			note_6.launch(1)
-		32:
+		32.0:
 			note_8.launch(1)
 		32.2:
 			note.launch(2)
@@ -199,11 +199,11 @@ func process_(delta: float) -> void:
 			note_7.launch(2)
 		33.6:
 			note_4.launch(2)
-		34:
+		34.0:
 			note_7.launch(2)
-		35:
+		35.0:
 			note.launch(1)
-		36:
+		36.0:
 			note_6.launch(2)
 		37.3:
 			note_8.launch(1)
@@ -211,15 +211,15 @@ func process_(delta: float) -> void:
 			note.launch(2)
 		37.8:
 			note_3.launch(1)
-		38:
+		38.0:
 			note_7.launch(1)
 		38.5:
 			note_5.launch(2)
-		39:
+		39.0:
 			note_2.launch(2)
 		39.7:
 			note_4.launch(1)
-		40:
+		40.0:
 			note_6.launch(2)
 		40.6:
 			note.launch(1)
@@ -231,17 +231,17 @@ func process_(delta: float) -> void:
 			note_8.launch(1)
 		42.8:
 			note.launch(2)
-		43:
+		43.0:
 			note_3.launch(1)
-		44:
+		44.0:
 			note_5.launch(2)
-		45:
+		45.0:
 			note_7.launch(1)
-		46:
+		46.0:
 			note_2.launch(2)
 		46.5:
 			note_4.launch(2)
-		48:
+		48.0:
 			note.launch(1)
 
 			

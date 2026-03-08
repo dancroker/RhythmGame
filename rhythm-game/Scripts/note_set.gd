@@ -29,6 +29,9 @@ func ready_() -> void:
 	note_7.ready_()
 	note_8.ready_()
 
+func round_to_dp(value: float, dp: int) -> float:
+	var multiplier = pow(10, dp)
+	return round(value * multiplier) / multiplier
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process_(delta: float) -> void:
@@ -54,37 +57,193 @@ func process_(delta: float) -> void:
 	else:
 		label_4.text = "C"
 	
-	internal_timer += delta
+	internal_timer += 0.01
+	#print (internal_timer)
 	#print(internal_timer)
-	match int(internal_timer):
-		3:
+	print(round_to_dp(internal_timer,1))
+	match int(round_to_dp(internal_timer,1)):
+		2:
 			note.launch(2)
-		6: 
+		3: 
 			note_2.launch(1)
-		7:
-			note_8.launch(1)
-		9:
-			note.launch(1)
-		12:
+		4:
 			note_4.launch(2)
-		15:
-			note_6.launch(1)
-		16:
-			note_7.launch(2)
-		18:
-			note_3.launch(1)
-		19:
-			note_5.launch(2)
-			
-		22:
-			note.launch(1)
-			note_2.launch(2)
-			note_3.launch(1)
-			note_4.launch(2)
+		6:
 			note_5.launch(1)
+		7:
+			note_7.launch(2)
+		9:
+			note_8.launch(1)
+		10:
+			note_7.launch(2)
+		10.4:
+			note.launch(1)
+		11:
+			note_6.launch(1)
+		12:
+			note_3.launch(1)
+		13:
+			note_4.launch(1)
+		13.1:
+			note_5.launch(2)
+		13.3:
 			note_6.launch(2)
+		13.5:
 			note_7.launch(1)
+		13.8:
+			note_8.launch(1)
+		14:
+			note.launch(2)
+		15:
+			note_3.launch(1)
+		16:
+			note_5.launch(2)
+		17:
+			note_4.launch(1)
+		17.3:
+			note_7.launch(2)
+		17.6:
+			note_4.launch(1)
+		18:
 			note_8.launch(2)
+		18.3:
+			note_6.launch(2)	
+		18.5:
+			note_4.launch(2)
+		18.7:
+			note_2.launch(2)
+		18.9:
+			note.launch(1)
+		19.1:
+			note_3.launch(1)
+		19.4:
+			note_5.launch(1)
+		19.6:
+			note_7.launch(1)
+		19.8:
+			note_3.launch(1)
+		20:
+			note.launch(1)
+		21:
+			note_5.launch(2)
+		21.5:
+			note.launch(1)
+		22:
+			note_4.launch(2)
+		22.5:
+			note_8.launch(2)
+		23:
+			note_4.launch(1)
+		23.4:
+			note_3.launch(1)
+		23.8:
+			note_6.launch(2)
+		24.2:
+			note_2.launch(2)
+		25:
+			note_7.launch(1)
+		26:
+			note.launch(1)
+		27:
+			note_5.launch(2)
+			print("1")
+		27.4:
+			note_4.launch(1)
+			print("2")
+		27.6:
+			note_5.launch(2)
+			print("3")
+		27.9:
+			note_6.launch(2)
+			print("4")
+		28.1:
+			note_8.launch(2)
+			print("5")
+		28.4:
+			note_4.launch(2)
+			print("6")
+		28.9:
+			note_2.launch(1)
+			print("7")
+		29.2:
+			note_4.launch(1)
+			print("1")
+		29.6:
+			note_7.launch(2)
+			print("1")
+		29.8:
+			note_3.launch(2)
+			print("1")
+		30.4:
+			note_6.launch(1)
+			print("1")
+		30.8:
+			note_2.launch(2)
+			print("1")
+		31.4:
+			note.launch(2)
+			print("1")
+		31.8:
+			note_6.launch(1)
+		32:
+			note_8.launch(1)
+		32.2:
+			note.launch(2)
+		32.4:
+			note_2.launch(1)
+		32.6:
+			note_3.launch(2)
+		32.8:
+			note_4.launch(2)
+		33.2:
+			note_7.launch(2)
+		33.6:
+			note_4.launch(2)
+		34:
+			note_7.launch(2)
+		35:
+			note.launch(1)
+		36:
+			note_6.launch(2)
+		37.3:
+			note_8.launch(1)
+		37.5:
+			note.launch(2)
+		37.8:
+			note_3.launch(1)
+		38:
+			note_7.launch(1)
+		38.5:
+			note_5.launch(2)
+		39:
+			note_2.launch(2)
+		39.7:
+			note_4.launch(1)
+		40:
+			note_6.launch(2)
+		40.6:
+			note.launch(1)
+		41.2:
+			note_7.launch(1)
+		41.8:
+			note_4.launch(2)
+		42.4:
+			note_8.launch(1)
+		42.8:
+			note.launch(2)
+		43:
+			note_3.launch(1)
+		44:
+			note_5.launch(2)
+		45:
+			note_7.launch(1)
+		46:
+			note_2.launch(2)
+		46.5:
+			note_4.launch(2)
+		48:
+			note.launch(1)
+
 			
 func score_track():
 	var score = note.getscore()

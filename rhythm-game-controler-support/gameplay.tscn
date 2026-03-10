@@ -1,0 +1,531 @@
+[gd_scene format=3 uid="uid://bhxnx1k7c444o"]
+
+[ext_resource type="Script" uid="uid://c5qopuiawblug" path="res://Scripts/main.gd" id="1_smepj"]
+[ext_resource type="Script" uid="uid://da5gfedn6jt83" path="res://Scripts/BasicControls.gd" id="2_cbffv"]
+[ext_resource type="Texture2D" uid="uid://cyjkt3mak0pc7" path="res://Assets/hit area.png" id="3_fbudy"]
+[ext_resource type="Script" uid="uid://btojfxiedlad8" path="res://Scripts/AreaNote.gd" id="4_0m7cd"]
+[ext_resource type="Script" uid="uid://tg2v6emt20iq" path="res://area_2d_2.gd" id="4_cbffv"]
+[ext_resource type="Script" uid="uid://rkbgrr5wvmis" path="res://Scripts/note_set.gd" id="5_fbudy"]
+[ext_resource type="Texture2D" uid="uid://dwpkyo3n8s60r" path="res://Assets/original-5813480B-784E-4C70-9A5A-1AE37A74D795 - Copy.png" id="6_cbffv"]
+[ext_resource type="AudioStream" uid="uid://dnql8v73hytkk" path="res://Scripts/simpsons_demo_theme.mp3" id="8_1qy1k"]
+[ext_resource type="Script" uid="uid://drtj1m71ciqok" path="res://Scripts/controler_control.gd" id="8_2ihbs"]
+[ext_resource type="Texture2D" uid="uid://beeu5qm8csg5v" path="res://Assets/area.png" id="9_1qy1k"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cbffv"]
+points = PackedVector2Array(69.601074, 213.87445, -59.05542, 211.64655, -284.7315, -253.97586, 240.44006, -247.2923, 223.56702, -198.2794)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_0m7cd"]
+points = PackedVector2Array(-17.993553, 1.5973237, -19.479256, 0.22818851, -13.206276, -0.608505, -5.1174316, -1.2170097, 7.2634506, -1.0648835, 16.177681, -0.15212679, 19.80941, 0.5324409, 18.653862, 2.2058284, 10.3999405, 0.9127562, 0.33015442, 0.30425167, -8.584084, 0.5324409)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(68, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3n40r"]
+
+[node name="Gameplay" type="Node2D" unique_id=6010253]
+script = ExtResource("1_smepj")
+
+[node name="Controll" type="Node" parent="." unique_id=1564261211]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll" unique_id=1451280682]
+position = Vector2(90.000015, -51.00003)
+rotation = -0.026243506
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll/CharacterBody2D" unique_id=406070639]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll/CharacterBody2D" unique_id=1629974195]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll/CharacterBody2D/Area2D" unique_id=1639708152]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll/CharacterBody2D" unique_id=1353834045]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll/CharacterBody2D/Area2D2" unique_id=64152686]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll2" type="Node" parent="." unique_id=184423271]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll2" unique_id=1808417059]
+position = Vector2(488.00006, -264)
+rotation = 0.7179832
+scale = Vector2(0.8642337, 0.97831917)
+skew = 0.040630817
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll2/CharacterBody2D" unique_id=1306984050]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=1049347200]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D" unique_id=1614036927]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll2/CharacterBody2D" unique_id=232402977]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll2/CharacterBody2D/Area2D2" unique_id=1692078226]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll3" type="Node" parent="." unique_id=1039426913]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll3" unique_id=432041722]
+position = Vector2(952, -172.00002)
+rotation = 1.5322194
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll3/CharacterBody2D" unique_id=948308258]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=1528400626]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D" unique_id=1142572623]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll3/CharacterBody2D" unique_id=1668336261]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll3/CharacterBody2D/Area2D2" unique_id=684988387]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll4" type="Node" parent="." unique_id=1519412545]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll4" unique_id=117250015]
+position = Vector2(1187.9999, 208.99991)
+rotation = 2.2695198
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll4/CharacterBody2D" unique_id=702626636]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=2080154196]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D" unique_id=1947971294]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll4/CharacterBody2D" unique_id=2122606185]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll4/CharacterBody2D/Area2D2" unique_id=17190597]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll5" type="Node" parent="." unique_id=1853906406]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll5" unique_id=1278050538]
+position = Vector2(1088, 680)
+rotation = 3.0731702
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll5/CharacterBody2D" unique_id=2006508344]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=1895599377]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D" unique_id=1916638164]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll5/CharacterBody2D" unique_id=199904577]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll5/CharacterBody2D/Area2D2" unique_id=2030321187]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll6" type="Node" parent="." unique_id=1612174119]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll6" unique_id=1494581459]
+position = Vector2(690, 932)
+rotation = 3.851249
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll6/CharacterBody2D" unique_id=1715519392]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1345848677]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D" unique_id=841968047]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll6/CharacterBody2D" unique_id=1394762281]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll6/CharacterBody2D/Area2D2" unique_id=508244510]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll7" type="Node" parent="." unique_id=2141886860]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll7" unique_id=100187904]
+position = Vector2(215, 823.9999)
+rotation = 4.6614347
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll7/CharacterBody2D" unique_id=1813587451]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=237965356]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D" unique_id=1666257549]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll7/CharacterBody2D" unique_id=3579267]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll7/CharacterBody2D/Area2D2" unique_id=2096375550]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="Controll8" type="Node" parent="." unique_id=1448144118]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Controll8" unique_id=1286828506]
+position = Vector2(-34, 404.99997)
+rotation = 5.475633
+scale = Vector2(0.8799997, 1)
+input_pickable = true
+script = ExtResource("2_cbffv")
+max_delay = 10
+path = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Controll8/CharacterBody2D" unique_id=522246552]
+position = Vector2(549.00006, 393)
+rotation = 0.37652788
+scale = Vector2(0.89977366, 0.798765)
+texture = ExtResource("3_fbudy")
+
+[node name="Area2D" type="Area2D" parent="Controll8/CharacterBody2D" unique_id=333844535]
+position = Vector2(545, 225)
+scale = Vector2(0.47413078, 0.4488615)
+
+[node name="CollisionNoteArea" type="CollisionShape2D" parent="Controll8/CharacterBody2D/Area2D" unique_id=1124945505]
+shape = SubResource("ConvexPolygonShape2D_cbffv")
+
+[node name="Area2D2" type="Area2D" parent="Controll8/CharacterBody2D" unique_id=308174996]
+script = ExtResource("4_cbffv")
+
+[node name="CollisionNoteHit" type="CollisionShape2D" parent="Controll8/CharacterBody2D/Area2D2" unique_id=1921466608]
+position = Vector2(536.00006, 124)
+scale = Vector2(6.0577264, 13.146985)
+shape = SubResource("ConvexPolygonShape2D_0m7cd")
+
+[node name="NoteSet" type="Node" parent="." unique_id=776400606]
+script = ExtResource("5_fbudy")
+
+[node name="Note" type="Area2D" parent="NoteSet" unique_id=1561228821]
+position = Vector2(34, 205)
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note" unique_id=1749239991]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note" unique_id=1632458159]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note6" type="Area2D" parent="NoteSet" unique_id=52482295]
+position = Vector2(1133, 458.99994)
+rotation = 3.177308
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 4
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note6" unique_id=746304389]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note6" unique_id=2074575608]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note2" type="Area2D" parent="NoteSet" unique_id=108029471]
+position = Vector2(278, -134)
+rotation = 0.74820614
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 1
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note2" unique_id=1130341644]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note2" unique_id=225385827]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note7" type="Area2D" parent="NoteSet" unique_id=467892635]
+position = Vector2(911.00006, 746)
+rotation = 3.8271775
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 5
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note7" unique_id=2045518316]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note7" unique_id=2127595902]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note8" type="Area2D" parent="NoteSet" unique_id=1866225848]
+position = Vector2(462.00006, 867)
+rotation = 4.707663
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 6
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note8" unique_id=340238681]
+position = Vector2(549.00006, 60.99994)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note8" unique_id=399445637]
+position = Vector2(546, 61.5)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note4" type="Area2D" parent="NoteSet" unique_id=1023465275]
+position = Vector2(701, -227)
+rotation = 1.5919924
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 2
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note4" unique_id=739864001]
+position = Vector2(556.82904, 60.83995)
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note4" unique_id=464268527]
+position = Vector2(553.829, 61.34001)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note3" type="Area2D" parent="NoteSet" unique_id=459784270]
+position = Vector2(278, -134)
+rotation = 0.74820614
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 7
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note3" unique_id=1675556746]
+position = Vector2(461.99628, 162.54271)
+rotation = -1.5935292
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note3" unique_id=1869195201]
+position = Vector2(458.99622, 163.04276)
+rotation = -1.5935292
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Note5" type="Area2D" parent="NoteSet" unique_id=1171021058]
+position = Vector2(856, 774.99994)
+rotation = -2.368732
+scale = Vector2(0.97314215, 0.82329375)
+script = ExtResource("4_0m7cd")
+speed = 60.0
+path = 3
+type = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="NoteSet/Note5" unique_id=1021534729]
+position = Vector2(465.653, 178.12172)
+rotation = -1.5935292
+scale = Vector2(0.3065359, 0.19924153)
+texture = ExtResource("6_cbffv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NoteSet/Note5" unique_id=214642990]
+position = Vector2(462.65295, 178.62177)
+rotation = -1.5935292
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Label" type="Label" parent="NoteSet" unique_id=1859930328]
+offset_right = 188.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Perfect:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="NoteSet" unique_id=317090746]
+offset_top = 63.0
+offset_right = 188.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 40
+text = "Close:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="NoteSet" unique_id=53968131]
+offset_top = 127.0
+offset_right = 188.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 40
+text = "Bad:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="NoteSet" unique_id=709643830]
+offset_left = 1040.0
+offset_right = 1228.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NoteSet" unique_id=876498963]
+stream = ExtResource("8_1qy1k")
+
+[node name="Controler Control" type="Node" parent="." unique_id=1321562546]
+
+[node name="Area2D" type="Area2D" parent="Controler Control" unique_id=461524763]
+script = ExtResource("8_2ihbs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Controler Control/Area2D" unique_id=1773493345]
+position = Vector2(575, 321)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("9_1qy1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controler Control/Area2D" unique_id=930951829]
+position = Vector2(576, 320.00003)
+scale = Vector2(2.200341, 2.2145085)
+shape = SubResource("CircleShape2D_3n40r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=898173838]
+
+[connection signal="area_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll/CharacterBody2D/Area2D" to="Controll/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll2/CharacterBody2D/Area2D" to="Controll2/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll2/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll2/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll3/CharacterBody2D/Area2D" to="Controll3/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll3/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll3/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll4/CharacterBody2D/Area2D" to="Controll4/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll4/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll4/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll5/CharacterBody2D/Area2D" to="Controll5/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll5/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll5/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll6/CharacterBody2D/Area2D" to="Controll6/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll6/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll6/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll7/CharacterBody2D/Area2D" to="Controll7/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll7/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll7/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
+[connection signal="area_entered" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Controll8/CharacterBody2D/Area2D" to="Controll8/CharacterBody2D" method="_on_area_2d_mouse_exited"]
+[connection signal="area_shape_entered" from="Controll8/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_entered"]
+[connection signal="area_shape_exited" from="Controll8/CharacterBody2D/Area2D2" to="NoteSet/Note" method="_on_area_2d_2_area_shape_exited"]
